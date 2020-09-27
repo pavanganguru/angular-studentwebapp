@@ -1,1 +1,33 @@
-<p>add-student works!</p>
+<h3>Add Student</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label for="name">Id</label>
+        <input type="text" class="form-control" id="id" required [(ngModel)]="student.id" name="id">
+      </div>
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="student.name" name="name">
+    </div>
+
+    <div class="form-group">
+        <label for="name">DOB</label>
+        <input type="text" class="form-control" id="dob" required [(ngModel)]="student.dob" name="dob">
+      </div>
+
+    <div class="form-group">
+      <label for="name">Email Id</label>
+      <input type="text" class="form-control" id="email" required [(ngModel)]="student.email" name="email">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Mobile number</label>
+      <input type="text" class="form-control" id="mobile" required [(ngModel)]="student.mobile" name="mobile">
+    </div>
+  
+
+    <input type="submit" class="btn btn-success">
+  </form>
+</div>

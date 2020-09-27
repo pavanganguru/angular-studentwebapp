@@ -36,5 +36,12 @@ export class StudentListComponent implements OnInit {
   editStudent(id: number){
     this.router.navigate(['editstudent', id]);
   }
+  addStudent(){
+    this.router.navigate(['addstudent']);
+  }
+
+  studentMarks(){
+    this.router.navigate(['studentmarks'])
+  }
 
 }

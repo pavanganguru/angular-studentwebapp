@@ -32,4 +32,10 @@ deleteStudent(id:number){
     return this.http.get<ApiResponse>(this.API_URL+'student/'+id)
   }
 
+  addStudent(student:Student):Observable<ApiResponse>{
+    return this.http.post<ApiResponse>(this.API_URL+'student/',student)
+  }
+
+  
+
 }
