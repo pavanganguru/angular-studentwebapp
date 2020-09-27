@@ -1,10 +1,32 @@
-<table>
-    <tr *ngFor="let student of students">
-        <td>{{student.id}}</td>
-        <td>{{student.name}}</td>
-        <td>{{student.dob}}</td>
-        <td>{{student.email}}</td>
-        <td>{{student.mobile}}</td>
-    </tr>
-</table>
-{{students}}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Student List</h2>
+    </div>
+    <div class="panel-body">
+      <table id="example" class="table table-striped table-bordered table-sm row-border hover" cellspacing="0" width="80%" >
+
+        <thead>
+          <tr>
+            <th >Id</th>
+            <th >Name</th>
+            <th >DOB</th>
+            <th >Email</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of students | async">
+              <td>{{student.id}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.dob}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.mobile}}</td>
+            
+              <td><button style='margin-right:16px' (click)="deleteStudent(student.id)" class="btn btn-danger">Delete</button>
+                <button style='margin-right:16px' (click)="updateStudent(student.id)" class="btn btn-success" style="margin-left: 10px">Edit details</button>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

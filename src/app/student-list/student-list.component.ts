@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Observable,Subject } from 'rxjs';
+import { ApiResponse } from '../api.response';
 import { StudentService } from '../student.service';
 
 @Component({
@@ -9,24 +11,27 @@ import { StudentService } from '../student.service';
   styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent implements OnInit {
-  constructor(private studentService:StudentService) { }
+  constructor(private studentService:StudentService,private router:Router) { }
 
-  studentsArr:any[]=[];
-  dtOptions:DataTables.Settings={}
-  dtTrigger:Subject<any>=new Subject();
-  students:Observable<Student[]>;
-  student:Student=new Student();
-  studentlist:any;
+  students:Observable<ApiResponse>;
   ngOnInit(): void {
-    this.dtOptions={
-      pageLength:6,
-      stateSave:true,
-      lengthMenu:[[6,16,20,-1],[6,16,20,"ALL"]],
-      processing:true
-    };
-    this.studentService.getall()
-   .subscribe( data=>{this.students=data;
-    this.dtTrigger.next();})
+
+    this.students=this.studentService.getstudents();
+    setTimeout(function(){
+      $(function(){
+        $('#example').DataTable();
+    });
+    },2000);
   }
+  // deleteStudent(id:number){
+  //   this.studentService.deleteStudent(id)
+  //     .subscribe(
+  //       data => {
+  //         console.log(data);
+  //         this.employees = this.employeeService.getEmployees();
+  //       },
+  //       error => console.log(error));
+
+  // }
 
 }
