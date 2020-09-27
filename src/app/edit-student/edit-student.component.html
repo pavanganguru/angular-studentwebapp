@@ -1,0 +1,36 @@
+<h3>
+    Give Correct Details
+  </h3>
+    <form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">ID</label>
+    <input type="text" class="form-control" id="id" [(ngModel)]="student.id" placeholder="{{student.id}}" name="id" readonly>
+</div>
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="student.name" placeholder="{{student.id}}"  name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="name">DOB</label>
+        <input type="text" class="form-control" id="dob" [(ngModel)]="student.dob"  name="dob">
+      </div>
+
+ 
+  <div class="form-group">
+    <label for="name">Email</label>
+    <input type="text" class="form-control" id="email" [(ngModel)]="student.email"  name="email">
+  
+  </div>
+  <div class="form-group">
+    <label for="name">Mobile</label>
+    <input type="text" class="form-control" id="mobile" [(ngModel)]="student.mobile" name="mobile">
+  
+  </div>
+  <div >
+  <input type="submit" placeholder="go" style='margin-right:16px' class="btn btn-success">
+
+  <button style='margin-right:16px' (click)="list()" class="btn btn-success">Back to Students</button>
+</div>
+  </form>

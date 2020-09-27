@@ -12,6 +12,7 @@
             <th >DOB</th>
             <th >Email</th>
             <th>Mobile</th>
+            <th>Delete/Update</th>
           </tr>
         </thead>
         <tbody>
@@ -23,7 +24,7 @@
             <td>{{student.mobile}}</td>
             
               <td><button style='margin-right:16px' (click)="deleteStudent(student.id)" class="btn btn-danger">Delete</button>
-                <button style='margin-right:16px' (click)="updateStudent(student.id)" class="btn btn-success" style="margin-left: 10px">Edit details</button>
+                <button style='margin-right:16px' (click)="editStudent(student.id)" class="btn btn-success" style="margin-left: 10px">Edit details</button>
               </td>
           </tr>
         </tbody>

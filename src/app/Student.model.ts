@@ -1,9 +1,9 @@
-class Student{
+export class Student{
   
     id:number;
     name:string;
     dob:string;
-    emaul:string;
+    email:string;
     mobile:string;
     constructor()
     {}

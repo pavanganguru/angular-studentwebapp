@@ -33,5 +33,8 @@ export class StudentListComponent implements OnInit {
         error => console.log(error));
 
   }
+  editStudent(id: number){
+    this.router.navigate(['editstudent', id]);
+  }
 
 }
