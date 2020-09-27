@@ -7,7 +7,7 @@ import { ApiResponse } from './api.response';
   providedIn: 'root'
 })
 export class StudentService {
-  API_URL:"http://localhost:8080"
+ 
 
   constructor(private http:HttpClient) {
     
@@ -20,7 +20,7 @@ getstudents():Observable<ApiResponse>{
   
 }
 deleteStudent(id:number){
-  return this.http.get<ApiResponse>("http://localhost:8080/")
+  return this.http.delete<ApiResponse>(this.base_URL+'student/'+id)
 }
 
 }

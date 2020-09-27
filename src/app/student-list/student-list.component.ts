@@ -23,15 +23,15 @@ export class StudentListComponent implements OnInit {
     });
     },2000);
   }
-  // deleteStudent(id:number){
-  //   this.studentService.deleteStudent(id)
-  //     .subscribe(
-  //       data => {
-  //         console.log(data);
-  //         this.employees = this.employeeService.getEmployees();
-  //       },
-  //       error => console.log(error));
+  deleteStudent(id:number){
+    this.studentService.deleteStudent(id)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.students = this.studentService.getstudents();
+        },
+        error => console.log(error));
 
-  // }
+  }
 
 }
